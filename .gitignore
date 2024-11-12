@@ -1,0 +1,24 @@
+
+Console.Write("Enter minNumber:");
+int minNumber = int.Parse(Console.ReadLine());
+Console.Write("Enter maxNumber:");
+int maxnumber = int.Parse(Console.ReadLine());
+if (minNumber > maxnumber)
+{
+    Console.WriteLine("minNUmber shold be less than maxNumber.");
+    return;
+}
+int rande = maxnumber - minNumber + 1;
+int[]frequency=new int[rande];
+Random random1= new Random();
+
+for (int i = 0; i < 1000; i++)
+{
+    int randomNumber = random1.Next(minNumber, maxnumber + 1);
+    frequency[randomNumber - minNumber]++;
+}
+Console.WriteLine("Number \t frequency");
+for (int i = 0; i < rande; i++)
+{
+    Console.WriteLine($"{minNumber + i}\t{frequency[i]}");
+}
